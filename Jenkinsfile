@@ -12,7 +12,7 @@ pipeline {
     stage('Analyze with Anchore plugin') {
       steps {
         writeFile file: 'anchore_images', text: IMAGELINE
-        anchore name: 'anchore_images', forceAnalyze: 'true', engineRetries: '900'
+        anchore name: 'anchore_images', forceAnalyze: 'true', bailOnFail: false
       } // end steps
     } // end stage "analyze with anchore plugin"
   } // end stages
