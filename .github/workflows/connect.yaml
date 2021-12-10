@@ -10,7 +10,7 @@ on:
     - cron: '11 3 * * 6'
   workflow_dispatch:
     branches:
-      - master
+      - main
   
 jobs:
   Check-Endpoint:
