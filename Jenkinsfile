@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    IMAGELINE = "docker.io/pvnovarese/test_images:alpine_sudo_test"
+    IMAGELINE = "docker.io/busybox:latest"
   } // end environment 
   agent any
   stages {
@@ -12,7 +12,7 @@ pipeline {
     stage('Analyze with Anchore plugin') {
       steps {
         writeFile file: 'anchore_images', text: IMAGELINE
-        anchore name: 'anchore_images', forceAnalyze: 'true', bailOnFail: false
+        anchore name: 'anchore_images', forceAnalyze: 'false', bailOnFail: false
       } // end steps
     } // end stage "analyze with anchore plugin"
   } // end stages
