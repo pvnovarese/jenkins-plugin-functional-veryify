@@ -25,4 +25,4 @@ jobs:
       uses: actions/checkout@v2
     - name: Ping Endpoint
       run: | 
-        curl -u '${ANCHORE_CLI_USER}:${ANCHORE_CLI_PASS}' -X 'GET' -H 'accept: application/json' ${ANCHORE_CLI_URL}/status
+        curl -u ${ANCHORE_CLI_USER}:${ANCHORE_CLI_PASS} -X 'GET' -H 'accept: application/json' ${ANCHORE_CLI_URL}/status
