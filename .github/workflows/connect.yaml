@@ -1,0 +1,28 @@
+# This workflow just verifies that the given anchore endpoint is reachable and responsive
+#
+name: Anchore Enterprise Test
+
+on: 
+  #push:
+  #  branches:
+  #    - main
+  schedule:
+    - cron: '11 3 * * 6'
+  workflow_dispatch:
+    branches:
+      - master
+  
+jobs:
+  Check-Endpoint:
+    runs-on: ubuntu-latest
+    env:
+      ANCHORE_CLI_USER: ${{ secrets.ANCHORE_CLI_USER }}
+      ANCHORE_CLI_PASS: ${{ secrets.ANCHORE_CLI_PASS }}
+      ANCHORE_CLI_URL: ${{ secrets.ANCHORE_CLI_URL }}
+      IMAGE: 'docker.io/busybox:latest'
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v2
+    - name: Ping Endpoint
+      run: | 
+        docker run -e ANCHORE_CLI_USER -e ANCHORE_CLI_PASS -e ANCHORE_CLI_URL anchore/engine-cli anchore-cli system status
