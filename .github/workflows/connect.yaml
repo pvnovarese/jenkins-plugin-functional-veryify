@@ -7,7 +7,7 @@ on:
   #  branches:
   #    - main
   schedule:
-    - cron: '54 20 29 * *'
+    - cron: '15 21 29 * *'
   
 jobs:
   Check-Endpoint:
