@@ -9,7 +9,7 @@ on:
   schedule:
     - cron: '11 3 */14 * *'
   workflow_dispatch:
-    branches:
+    inputs:
       - main
   
 jobs:
