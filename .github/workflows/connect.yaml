@@ -7,7 +7,8 @@ on:
   #  branches:
   #    - main
   schedule:
-    - cron: '15 21 29 * *'
+    - cron: '15 21 */14 * *'
+  workflow_dispatch
   
 jobs:
   Check-Endpoint:
