@@ -2,13 +2,12 @@
 #
 name: Anchore Enterprise Test
 
-on: 
+on: workflow_dispatch
   #push:
   #  branches:
   #    - main
-  schedule:
-    - cron: '15 21 */14 * *'
-  workflow_dispatch
+  #schedule:
+  #  - cron: '15 21 */14 * *'
   
 jobs:
   Check-Endpoint:
