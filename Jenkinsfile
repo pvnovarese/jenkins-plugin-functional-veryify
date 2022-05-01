@@ -1,3 +1,9 @@
+// this is the most basic functional test I could think of with the 
+// Anchore Plugin, since it does not seem to have a way to just do
+// a simple "system status" or similar action like anchore-cli
+// if you're airgapped, you can replace IMAGELINE with a similar 
+// trivial image located inside your environment.
+
 pipeline {
   environment {
     IMAGELINE = "docker.io/busybox:latest"
