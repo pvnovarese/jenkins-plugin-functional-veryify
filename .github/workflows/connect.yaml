@@ -9,6 +9,11 @@ on:
   #    - main
   schedule:
     - cron: '15 21 */14 * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Manual Test'  
+
   
 jobs:
   Check-Endpoint:
